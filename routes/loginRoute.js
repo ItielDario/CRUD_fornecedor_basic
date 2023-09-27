@@ -10,6 +10,7 @@ class LoginRoute{
     const ctrl = new LoginController();
 
     this.#router.get('/', ctrl.loginView);
+    this.#router.post('/', ctrl.login);
   }
 
   get router(){

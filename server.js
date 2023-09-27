@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('mysql2');
+const mysql = require('mysql2')
 const FornecedorRoute = require('./routes/fornecedorRoute');
 const LoginRoute = require('./routes/loginRoute');
 const app = express();
@@ -11,6 +11,7 @@ app.use(express.urlencoded());
 app.use(express.json());
 
 // GESTÃO DO BANCO
+/*
 const conexao = mysql.createConnection({
   host: '132.226.245.178',
   database: 'PFS1_10442221876',
@@ -28,6 +29,8 @@ conexao.query(sql, (err, res) => {
     console.log(res);
   }
 });
+*/
+
 
 // ROTAS
 const fornecedorRouter = new FornecedorRoute();

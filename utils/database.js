@@ -13,7 +13,6 @@ class Database {
   }
 
   executaltarComandoLista(sql) {
-    sql = 'SELECT * FROM tb_usuario'
     return new Promise((res, rej) => {
       this.#conexao.query(sql, (error, result) => {
         if (error) {

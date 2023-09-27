@@ -2,12 +2,41 @@ document.querySelector('#btn-entrar').addEventListener('click', () => {
 
   const email = document.querySelector('#email');
   const senha = document.querySelector('#senha');
+  const alert = document.querySelector('#alert-msg');
+  alert.innerHTML = '';
 
   if(validarCampos(email.value, senha.value)){
-    cosole.log('TAI MEU PACERO');
+    const usuario = {
+      email: email.value,
+      senha: senha.value,
+    }
+
+    fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(usuario), 
+    })
+    .then((resposta1) => {
+      return resposta1.json();
+    })
+    .then((resposta2) => {
+      if(resposta2.ok){
+        window.location.href = '/';
+      }
+      else{
+        setTimeout(() => {
+          alert.innerHTML = `<div class="alert alert-danger">${resposta2.msg}</div>`
+        }, 200);
+      }
+    })
   }
   else{
-    console.log('DEU RUIM');
+    console.log('aq')
+    setTimeout(() => {
+      alert.innerHTML = `<div class="alert alert-danger">Por favor, preencha os campos abaixo!</div>`
+    }, 200);
   }
 })
 
