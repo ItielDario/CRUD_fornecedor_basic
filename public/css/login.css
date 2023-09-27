@@ -1,0 +1,64 @@
+/*CADASTRAR*/
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header{
+    width: 60vw;
+    border: 1px solid rgb(194, 194, 194);
+    border-radius: 0.5vw;
+    padding: 2vw;
+}
+
+h1{
+    font-size: 3vw;
+}
+
+.form{
+    margin-top: 2vw;
+}
+
+label{
+    font-size: 2vw;
+}
+
+.form-control{
+    margin-top: -1vw;
+    padding: 0.3vw 1vw;
+    font-size: 1.8vw;
+    border-color: rgb(159, 159, 159);
+}
+
+.form-control::placeholder{
+    color: rgb(146, 146, 146);
+}
+
+.col-12{
+    margin-top: 1.5vw;
+}
+
+.box-buttons{
+    display: flex;
+    justify-content: end;
+}
+
+#btn-entrar{
+    margin-top: 4vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+.alert{
+    color: white;
+    font-weight: bold;
+    padding: 1vw 2vw;
+    font-size: 2vw;
+    border: none;
+}
+
+.alert-danger{
+    background-color: rgb(195, 12, 12);
+}
