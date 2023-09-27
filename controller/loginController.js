@@ -1,4 +1,5 @@
 const UsuarioModel = require('../model/usuarioModel')
+const cookieParser = require('cookie-parser');
 
 class LoginController{
 

@@ -1,5 +1,6 @@
 const express = require('express');
-const mysql = require('mysql2')
+const mysql = require('mysql2');
+const cookieParser = require('cookie-parser');
 const FornecedorRoute = require('./routes/fornecedorRoute');
 const LoginRoute = require('./routes/loginRoute');
 const app = express();
@@ -9,6 +10,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded());
 app.use(express.json());
+app.use(cookieParser());
 
 // GESTÃO DO BANCO
 /*

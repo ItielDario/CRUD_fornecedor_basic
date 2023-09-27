@@ -40,6 +40,16 @@ class UsuarioModel{
 
     return false;
   }
+
+  async obterUsuario(id){
+    const sql = 'SELECT * FROM tb_usuario WHERE usu_id = ?';
+    const valor = id;
+
+    const query = await conexao.executaltarComandoR();
+
+    console.log(query);
+    return query[0];
+  }
 }
 
 module.exports = UsuarioModel;

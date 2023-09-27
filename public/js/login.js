@@ -13,6 +13,7 @@ document.querySelector('#btn-entrar').addEventListener('click', () => {
 
     fetch('/login', {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-type': 'application/json',
       },

@@ -1,5 +1,5 @@
 const express = require('express');
-const LoginController = require('../controller/loginController')
+const LoginController = require('../controller/loginController');
 
 class LoginRoute{
   
