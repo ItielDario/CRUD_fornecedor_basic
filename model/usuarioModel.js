@@ -45,9 +45,7 @@ class UsuarioModel{
     const sql = 'SELECT * FROM tb_usuario WHERE usu_id = ?';
     const valor = id;
 
-    const query = await conexao.executaltarComandoR();
-
-    console.log(query);
+    const query = await conexao.executaltarComandoR(sql, valor);
     return query[0];
   }
 }

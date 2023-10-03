@@ -13,7 +13,7 @@ class LoginController{
     const resposta = await usuario.buscarUsuario();
 
     if(resposta){
-      res.cookie = ('usuarioLogado', resposta[0].usu_id);
+      res.cookie('usuarioLogado', resposta[0].usu_id);
       res.send({ok: true, msg: 'Usuário logado'});
     }
     else{

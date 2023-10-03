@@ -11,9 +11,13 @@ app.use(express.static('public'));
 app.use(express.urlencoded());
 app.use(express.json());
 app.use(cookieParser());
+app.use((req, res, next) => {
+  console.log('Cookies recebidos:', req.headers.cookie);
+  next();
+});
 
 // GESTÃO DO BANCO
-/*
+
 const conexao = mysql.createConnection({
   host: '132.226.245.178',
   database: 'PFS1_10442221876',
@@ -31,7 +35,7 @@ conexao.query(sql, (err, res) => {
     console.log(res);
   }
 });
-*/
+
 
 
 // ROTAS

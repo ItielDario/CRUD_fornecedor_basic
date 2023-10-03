@@ -4,14 +4,12 @@ const cookieParser = require('cookie-parser');
 class Autenticacao {
   
   async verificarUsuarioLogado(req, res, next){
-    console.log('aaaaaaaaa' + req.cookies.usuarioLogado);
-    console.log('BBBBB -> ' + req.headers.cookie);
     
     if(req.headers.cookie != undefined && req.headers.cookie.includes('usuarioLogado')){
       const id = req.cookies.usuarioLogado;
       const usuario = new UsuarioModel();
-      usuario = await usuario.obterUsuario(id);
-      req.cookie.usuarioLogado = usuario;
+      const resposta = await usuario.obterUsuario(id);
+      req.cookies.usuarioLogado = resposta;
       next();
     }
     else{
