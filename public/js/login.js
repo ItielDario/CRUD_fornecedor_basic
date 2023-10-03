@@ -34,7 +34,6 @@ document.querySelector('#btn-entrar').addEventListener('click', () => {
     })
   }
   else{
-    console.log('aq')
     setTimeout(() => {
       alert.innerHTML = `<div class="alert alert-danger">Por favor, preencha os campos abaixo!</div>`
     }, 200);

@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 class LoginController{
 
   loginView(req, res){
+    res.cookie('usuarioLogado', 'false');
     res.render('login');
   }
 

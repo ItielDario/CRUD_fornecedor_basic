@@ -6,7 +6,8 @@ class FornecedorController{
     async listarView(req, res){
         const fornecedor = new FornecedorModel();
         const listaFornecedores = await fornecedor.listarFornecedores();
-        res.render('listar', {lista: listaFornecedores});
+        const usuario = req.cookies.usuarioLogado;
+        res.render('listar', {lista: listaFornecedores, usuario: usuario});
     }
 
     cadastrarView(req, res){

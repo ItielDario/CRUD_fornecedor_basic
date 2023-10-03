@@ -5,7 +5,7 @@ class Autenticacao {
   
   async verificarUsuarioLogado(req, res, next){
     
-    if(req.headers.cookie != undefined && req.headers.cookie.includes('usuarioLogado')){
+    if(req.headers.cookie != undefined && req.headers.cookie.includes('usuarioLogado') && req.cookies.usuarioLogado != 'false'){
       const id = req.cookies.usuarioLogado;
       const usuario = new UsuarioModel();
       const resposta = await usuario.obterUsuario(id);

@@ -11,10 +11,6 @@ app.use(express.static('public'));
 app.use(express.urlencoded());
 app.use(express.json());
 app.use(cookieParser());
-app.use((req, res, next) => {
-  console.log('Cookies recebidos:', req.headers.cookie);
-  next();
-});
 
 // GESTÃO DO BANCO
 
@@ -35,7 +31,6 @@ conexao.query(sql, (err, res) => {
     console.log(res);
   }
 });
-
 
 
 // ROTAS

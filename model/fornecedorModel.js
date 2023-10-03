@@ -27,7 +27,6 @@ class FornecedorModel {
     }
 
     async gravarFornecedor(create){
-        console.log(create);
         if(create){    
             var sql = 'INSERT INTO tb_fornecedor (for_cnpj, for_fone, for_razao_social) VALUES (? , ?, ?)';
 
