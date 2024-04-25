@@ -43,3 +43,5 @@ app.use('/login', loginRouter.router);
 app.listen(3000, () => {
     console.log('Servidor iniciado');
 });
+
+//teste
